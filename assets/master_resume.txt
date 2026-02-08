@@ -1,0 +1,48 @@
+JOHN DOE
+Email: john.doe@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Example | GPA: 3.8/4.0 | Graduated: May 2022
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, TypeScript, Java, C++, SQL
+Frameworks: React, Node.js, Express, Next.js, Django, Flask
+Tools: Git, Docker, AWS, PostgreSQL, MongoDB, Redis
+Other: RESTful APIs, Microservices, CI/CD, Agile/Scrum
+
+EXPERIENCE
+
+Software Engineer | Tech Company Inc. | June 2022 - Present
+- Developed and maintained full-stack web applications serving 100K+ users using React and Node.js
+- Implemented RESTful APIs that reduced response time by 40% through optimization and caching strategies
+- Collaborated with cross-functional teams to deliver 5+ major features on schedule
+- Wrote comprehensive unit and integration tests achieving 85% code coverage
+- Mentored 2 junior developers and conducted code reviews
+
+Software Engineering Intern | StartupCo | Summer 2021
+- Built a real-time data dashboard using React and WebSockets, improving data visibility for clients
+- Optimized database queries reducing load times by 50%
+- Contributed to migration of legacy monolith to microservices architecture
+- Participated in daily standups and sprint planning
+
+PROJECTS
+
+E-Commerce Platform (Personal Project)
+- Built a full-stack e-commerce application with React frontend and Node.js/Express backend
+- Implemented user authentication, product catalog, shopping cart, and payment processing
+- Deployed on AWS using Docker containers and managed with CI/CD pipeline
+- Technologies: React, Node.js, PostgreSQL, Stripe API, Docker, AWS
+
+Machine Learning Model Deployment
+- Created a web application to deploy and serve ML models for image classification
+- Achieved 92% accuracy using TensorFlow and deployed via Flask API
+- Technologies: Python, TensorFlow, Flask, Docker
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect - Associate
+- MongoDB Certified Developer
+
+ACHIEVEMENTS
+- Won 2nd place in university hackathon (team of 4) for building an AI-powered study assistant
+- Published research paper on machine learning applications in Image Processing

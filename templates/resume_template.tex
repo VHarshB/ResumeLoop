@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+% Formatting
+\setlist{nosep}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\pagestyle{empty}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\LARGE \textbf{YOUR NAME}} \\[4pt]
+    Email: your.email@example.com $|$ Phone: (555) 123-4567 $|$ 
+    LinkedIn: linkedin.com/in/yourprofile $|$ GitHub: github.com/yourprofile
+\end{center}
+
+\section*{EDUCATION}
+\textbf{Degree Name} \hfill City, State \\
+University Name \hfill Graduation Date \\
+GPA: X.X/4.0 (if strong)
+
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Languages:} Python, JavaScript, Java, C++
+    \item \textbf{Frameworks:} React, Node.js, Django, Flask
+    \item \textbf{Tools:} Git, Docker, AWS, PostgreSQL
+\end{itemize}
+
+\section*{EXPERIENCE}
+\textbf{Job Title} \hfill Start Date -- End Date \\
+\textit{Company Name} \hfill City, State
+\begin{itemize}[leftmargin=*]
+    \item Achievement or responsibility with quantifiable impact
+    \item Another achievement with specific metrics
+    \item Technical implementation or project contribution
+\end{itemize}
+
+\textbf{Previous Job Title} \hfill Start Date -- End Date \\
+\textit{Previous Company} \hfill City, State
+\begin{itemize}[leftmargin=*]
+    \item Key achievement or responsibility
+    \item Technical skills demonstrated
+\end{itemize}
+
+\section*{PROJECTS}
+\textbf{Project Name}
+\begin{itemize}[leftmargin=*]
+    \item Description of project and technologies used
+    \item Impact or results achieved
+\end{itemize}
+
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=*]
+    \item Certification Name -- Issuing Organization, Year
+\end{itemize}
+
+\end{document}
