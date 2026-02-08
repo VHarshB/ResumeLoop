@@ -1,3 +1,4 @@
+import os from 'os';
 import { config } from './config';
 
 interface OllamaMessage {
@@ -9,6 +10,12 @@ interface OllamaRequest {
   model: string;
   messages: OllamaMessage[];
   stream: boolean;
+  options?: {
+    num_thread?: number;
+    num_ctx?: number;
+    num_predict?: number;
+  };
+  keep_alive?: string;
 }
 
 interface OllamaResponse {
@@ -30,6 +37,21 @@ export async function ollamaChat(
   userMessage: string
 ): Promise<string> {
   const url = `${config.ollamaHost}/api/chat`;
+  const cpuThreads = os.cpus().length || undefined;
+  const numThread = config.ollamaNumThread ?? cpuThreads;
+  const options: OllamaRequest['options'] = {};
+
+  if (numThread) {
+    options.num_thread = numThread;
+  }
+
+  if (config.ollamaNumCtx) {
+    options.num_ctx = config.ollamaNumCtx;
+  }
+
+  if (config.ollamaNumPredict) {
+    options.num_predict = config.ollamaNumPredict;
+  }
 
   const requestBody: OllamaRequest = {
     model,
@@ -44,16 +66,24 @@ export async function ollamaChat(
       },
     ],
     stream: false,
+    keep_alive: config.ollamaKeepAlive,
+    options: Object.keys(options).length ? options : undefined,
   };
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), config.ollamaTimeout);
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestBody),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       throw new Error(`Ollama API error: ${response.status} ${response.statusText}`);
@@ -61,9 +91,18 @@ export async function ollamaChat(
 
     const data: OllamaResponse = await response.json();
     return data.message.content.trim();
-  } catch (error) {
+  } catch (error: any) {
     console.error('Ollama chat error:', error);
-    throw new Error(`Failed to communicate with Ollama: ${error}`);
+    
+    if (error.name === 'AbortError') {
+      throw new Error(`Ollama timeout after ${config.ollamaTimeout / 1000}s. Check if Ollama is running: ollama serve`);
+    }
+    
+    if (error.code === 'ECONNREFUSED') {
+      throw new Error('Cannot connect to Ollama. Is Ollama running? Start with: ollama serve');
+    }
+    
+    throw new Error(`Failed to communicate with Ollama: ${error.message || error}`);
   }
 }
 

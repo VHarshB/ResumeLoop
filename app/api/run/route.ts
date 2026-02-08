@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
 
     // STEP 2: Update Excel tracker
     const pdfPath = `data/runs/${runId}/resume.pdf`;
-    await appendJobToExcel(fields, runId, pdfPath);
+    await appendJobToExcel(fields, runId, pdfPath, jd);
 
     console.log('\nStep 3: Generating tailored resume...');
 
