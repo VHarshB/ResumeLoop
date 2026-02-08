@@ -1,48 +1,69 @@
-JOHN DOE
-Email: john.doe@email.com | Phone: (555) 123-4567 | LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+Harsh Vaishya
+hvaishya@asu.edu | (480)465-1376 | harshvaishya.tech | linkedin.com/in/harsh-asu/ | github.com/VHarshB
 
 EDUCATION
 Bachelor of Science in Computer Science
-University of Example | GPA: 3.8/4.0 | Graduated: May 2022
+Arizona State University | Ira A. Fulton Schools of Engineering | GPA: 3.6/4.0 | Expected Graduation: May 2027
+
+RELEVANT COURSEWORK
+Advanced Data Structures & Algorithms, Operating Systems, Computer Architecture, Distributed Systems, Web Programming, Full Stack Engineering, Object-Oriented Design, Database Management
 
 TECHNICAL SKILLS
-Languages: Python, JavaScript, TypeScript, Java, C++, SQL
-Frameworks: React, Node.js, Express, Next.js, Django, Flask
-Tools: Git, Docker, AWS, PostgreSQL, MongoDB, Redis
-Other: RESTful APIs, Microservices, CI/CD, Agile/Scrum
+Languages: JavaScript, TypeScript, Python, Java, C++, C#, SQL
+Frontend: React.js, Next.js, Three.js, TailwindCSS, Redux
+Backend: FastAPI, Node.js, Express.js, Spring Boot, Django
+Data & Cloud: MongoDB, PostgreSQL, Redis, AWS, Google Cloud Platform, Docker, Kubernetes
+Tools & Platforms: Git, GitHub Actions, Jenkins, Postman, VS Code, IntelliJ IDEA
+Testing: Jest, Pytest, JUnit, Selenium
 
-EXPERIENCE
+ARIZONA STATE UNIVERSITY HACKATHONS
 
-Software Engineer | Tech Company Inc. | June 2022 - Present
-- Developed and maintained full-stack web applications serving 100K+ users using React and Node.js
-- Implemented RESTful APIs that reduced response time by 40% through optimization and caching strategies
-- Collaborated with cross-functional teams to deliver 5+ major features on schedule
-- Wrote comprehensive unit and integration tests achieving 85% code coverage
-- Mentored 2 junior developers and conducted code reviews
+Tom Riddle AI - 3rd Place, Innovation Hack 2025
+Technologies: React.js, FastAPI, ChromaDB, NLP
+Built interactive frontend using React.js to create magical, disappearing-input diary interface inspired by Tom Riddle's diary from Harry Potter by engineering RESTful APIs with FastAPI, resulting in 3rd place finish with immersive UX and responsive communication between frontend and backend
+Blended ChromaDB for semantic search and long-term memory of diary entries by implementing NLP-powered conversational AI, resulting in personal diary that remembers past entries and enables users to query historical events (e.g., "when was the day I fought with my girlfriend")
 
-Software Engineering Intern | StartupCo | Summer 2021
-- Built a real-time data dashboard using React and WebSockets, improving data visibility for clients
-- Optimized database queries reducing load times by 50%
-- Contributed to migration of legacy monolith to microservices architecture
-- Participated in daily standups and sprint planning
+Distributed CRM Platform - Top 5, OHack 2024
+Technologies: React.js, Node.js, MongoDB, AWS, Docker
+Architected scalable customer relationship management system using microservices architecture with Docker containerization by processing 25K+ customer records, resulting in 99.97% uptime and Top 5 placement
+Implemented advanced data visualization dashboard with real-time analytics using D3.js and Chart.js by deploying multi-tier application on AWS with load balancing and auto-scaling, resulting in 50% faster data-driven decisions, 75% reduced deployment time, and 40% lower infrastructure costs through CI/CD pipeline using GitHub Actions
 
-PROJECTS
+Faith - 1st Place, Hack SoDA 2024
+Technologies: React.js, FastAPI, Browser Extension, Full Stack
+Built interactive frontend using React.js by engineering RESTful APIs with FastAPI to determine domain safety and haunted status detection, resulting in 1st place win
+Blended ChromaDB for semantic search by crafting immersive UX and responsive communication between frontend and backend, resulting in website safety checker that identifies potentially haunted or unsafe domains
 
-E-Commerce Platform (Personal Project)
-- Built a full-stack e-commerce application with React frontend and Node.js/Express backend
-- Implemented user authentication, product catalog, shopping cart, and payment processing
-- Deployed on AWS using Docker containers and managed with CI/CD pipeline
-- Technologies: React, Node.js, PostgreSQL, Stripe API, Docker, AWS
+Melodia AI Music Engine - 2nd Place, SunHack 2024
+Technologies: Python, React.js, Three.js, FFT, Machine Learning
+Built real-time audio visualization system with Three.js WebGL rendering by processing 44.1kHz audio streams with GPU acceleration, resulting in smooth 60fps performance with dynamic visual effects synchronized to beat detection and 2nd place finish
+Implemented scalable backend using Python FastAPI with Redis caching and AWS S3 storage by enabling concurrent processing of 100+ audio files, resulting in sub-3-second processing time for 5-minute songs and AI-powered instrumental backtrack generation allowing users to add custom instruments to any music
 
-Machine Learning Model Deployment
-- Created a web application to deploy and serve ML models for image classification
-- Achieved 92% accuracy using TensorFlow and deployed via Flask API
-- Technologies: Python, TensorFlow, Flask, Docker
+PERSONAL PROJECTS
 
-CERTIFICATIONS
-- AWS Certified Solutions Architect - Associate
-- MongoDB Certified Developer
+Intelligent Academic Registration System
+Technologies: Python, AWS Lambda, PostgreSQL, Docker, XML/JSON
+Developed automated software application using Python with PostgreSQL relational database design by implementing SQL query construction and stored procedures across 200+ courses, resulting in 24/7 monitoring with 2-minute intervals and email notifications for open seats
+Deployed using Docker containerization with file parsing by solving ASU's 6:30 AM class registration challenge, resulting in automated seat checking that eliminated need for repeated manual checks and ensured preferred professor enrollment
 
-ACHIEVEMENTS
-- Won 2nd place in university hackathon (team of 4) for building an AI-powered study assistant
-- Published research paper on machine learning applications in Image Processing
+EnKoat Enterprise Management Platform
+Technologies: React.js, Node.js, TypeScript, MongoDB, SQL
+Built dynamic React-based quote submission portal with real-time validation and controlled UI states by designing RESTful API (Node.js/Express) with MongoDB integration, resulting in reliable data persistence for roofing project management
+Synthesized and structured custom dataset (CSV) to simulate real roofing project metrics by authoring detailed documentation on architecture and deployment, resulting in comprehensive enterprise management platform with full-stack implementation
+
+WORK EXPERIENCE
+
+Epics High Mentor | Arizona State University | August 2024 - Present
+Mentored 100+ high school students on community-based engineering projects by setting timelines with teachers and guiding project execution, resulting in successful completion of multiple student-led initiatives
+Facilitated collaboration between students and faculty by coordinating project milestones and deliverables, resulting in enhanced learning outcomes for high school participants
+
+Section Leader | Arizona State University | August 2024 - December 2024
+Led discussions for 200+ engineering freshmen by mentoring students in academic planning, resulting in improved student engagement and academic success rates
+Delivered workshops on engineering fundamentals and academic strategies by providing personalized guidance, resulting in enhanced freshman experience and retention
+
+LEADERSHIP & RECOGNITION
+
+Keynote Speaker (2x) | Ignite ASU Technology Conference | October 2023, November 2024
+Delivered keynote presentations to 500+ attendees at major ASU technology conference
+
+Technical Excellence Award (3x) | International Student and Scholars Center | December 2023, April 2024, October 2024
+Recognized three times for outstanding technical achievements and contributions to the international student community

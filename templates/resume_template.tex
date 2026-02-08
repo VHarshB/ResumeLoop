@@ -1,71 +1,317 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{enumitem}
-\usepackage{hyperref}
+\documentclass[10pt]{article}
+
+% Packages
+\usepackage[
+    papersize={8.5in,11in},
+    ignoreheadfoot,
+    top=0.5 cm,
+    bottom=0.2 cm,
+    left=1 cm,
+    right=1 cm,
+    footskip=1.0 cm,
+]{geometry}
+
 \usepackage{titlesec}
-
-% Formatting
-\setlist{nosep}
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{6pt}
-\pagestyle{empty}
-
-% Hyperref setup
-\hypersetup{
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Harsh Vaishya's CV},
+    pdfauthor={Harsh Vaishya},
+    pdfcreator={LaTeX with RenderCV},
     colorlinks=true,
-    linkcolor=blue,
-    urlcolor=blue
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% ATS compatibility
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Settings
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+% Section formatting
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{-9pt}\rule{\linewidth}{2pt}]
+\titlespacing{\section}{-1pt}{0.24 cm}{0.05 cm}
+
+% Custom bullet points
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Environments
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
 }
 
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+% Commands
+\let\hrefWithoutArrow\href
+
+\newcommand{\AND}{\unskip\cleaders\copy\ANDbox\hskip\wd\ANDbox\ignorespaces}
+\newsavebox\ANDbox
+\sbox\ANDbox{$|$}
+
 \begin{document}
+    % PDF metadata
+    \pdfinfo{
+      /Title (Harsh Vaishya - Software Engineering Resume)
+      /Author (Harsh Vaishya)
+      /Subject (Software Engineering Internship Resume)
+      /Keywords (Computer Science, Software Engineering, Full Stack Development, Backend Development, System Design, Distributed Systems, Python, JavaScript, TypeScript, React, Node.js, FastAPI, AWS, Docker, Kubernetes, Machine Learning, Data Structures, Algorithms, REST API, Microservices, Web Development, Cloud Computing, Database Design, PostgreSQL, MongoDB, Redis)
+    }
 
-% Header
-\begin{center}
-    {\LARGE \textbf{YOUR NAME}} \\[4pt]
-    Email: your.email@example.com $|$ Phone: (555) 123-4567 $|$ 
-    LinkedIn: linkedin.com/in/yourprofile $|$ GitHub: github.com/yourprofile
-\end{center}
+    % Header
+\begin{header}
+        \fontsize{25pt}{25pt}\selectfont \textbf{Harsh Vaishya}
+        
+        \vspace{0cm}
+        
+        \normalsize
+        \mbox{hvaishya@asu.edu}
+        \hspace{0.1cm}
+        \AND
+        \hspace{0.1cm}
+        \mbox{(480)465-1376}
+        \hspace{0.1cm}
+        \AND
+        \hspace{0.1cm}
+        \mbox{harshvaishya.tech}
+        \hspace{0.1cm}
+        \AND
+        \hspace{0.1cm}
+        \mbox{linkedin.com/in/harsh-asu/}
+        \hspace{0.1cm}
+        \AND
+        \hspace{0.1cm}
+        \mbox{github.com/VHarshB}
+\end{header}
 
-\section*{EDUCATION}
-\textbf{Degree Name} \hfill City, State \\
-University Name \hfill Graduation Date \\
-GPA: X.X/4.0 (if strong)
+    \vspace{0cm}
 
-\section*{TECHNICAL SKILLS}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Languages:} Python, JavaScript, Java, C++
-    \item \textbf{Frameworks:} React, Node.js, Django, Flask
-    \item \textbf{Tools:} Git, Docker, AWS, PostgreSQL
-\end{itemize}
+    % Summary
+\section{Summary}
+        
+        \begin{onecolentry}
+        
+            \text Software Engineering student specializing in full-stack development and distributed systems with 4 hackathon placements seeking Software Engineering Intern positions
+         
+        \end{onecolentry}
 
-\section*{EXPERIENCE}
-\textbf{Job Title} \hfill Start Date -- End Date \\
-\textit{Company Name} \hfill City, State
-\begin{itemize}[leftmargin=*]
-    \item Achievement or responsibility with quantifiable impact
-    \item Another achievement with specific metrics
-    \item Technical implementation or project contribution
-\end{itemize}
+    % Education
+    \section{Education}
 
-\textbf{Previous Job Title} \hfill Start Date -- End Date \\
-\textit{Previous Company} \hfill City, State
-\begin{itemize}[leftmargin=*]
-    \item Key achievement or responsibility
-    \item Technical skills demonstrated
-\end{itemize}
+    \begin{twocolentry}{May 2027}
+        \textbf{Bachelor of Science in Computer Science}
+    \end{twocolentry}
+    
+    \begin{twocolentry}{GPA: 3.6/4.0}
+        \textbf{Arizona State University}, Ira A. Fulton Schools of Engineering, Tempe, Arizona
+    \end{twocolentry}
 
-\section*{PROJECTS}
-\textbf{Project Name}
-\begin{itemize}[leftmargin=*]
-    \item Description of project and technologies used
-    \item Impact or results achieved
-\end{itemize}
+    \begin{onecolentry}
+     \textbf{Relevant Coursework:} Advanced Data Structures \& Algorithms, Operating Systems, Computer Architecture
+    \end{onecolentry}
 
-\section*{CERTIFICATIONS}
-\begin{itemize}[leftmargin=*]
-    \item Certification Name -- Issuing Organization, Year
-\end{itemize}
+    % Technical Skills
+    \section{Technical Skills}
+    
+    \begin{onecolentry}
+        \textbf{Languages:} JavaScript, TypeScript, Python, Java, C++, SQL
+    \end{onecolentry}
+    
+    \vspace{0.06cm}
+    
+    \begin{onecolentry}
+        \textbf{Frontend:} React.js, Next.js, Three.js, TailwindCSS
+    \end{onecolentry}
+    
+    \vspace{0.06cm}
+    
+    \begin{onecolentry}
+        \textbf{Backend:} FastAPI, Node.js, Express.js, Spring Boot
+    \end{onecolentry}
+    
+    \vspace{0.06cm}
+    
+    \begin{onecolentry}
+        \textbf{Databases \& Cloud:} MongoDB, PostgreSQL, Redis, AWS, Docker
+    \end{onecolentry}
+    
+    \vspace{0.06cm}
+    
+    \begin{onecolentry}
+        \textbf{Tools:} Git, GitHub Actions, Postman, VS Code
+    \end{onecolentry}
+ 
+    % Technical Projects
+    \section{Arizona State University Hackathons}
+
+    \begin{twocolentry}{March 2025}
+        \textbf{Tom Riddle AI - 3rd Place, Innovation Hack 2025}, React.js, FastAPI, ChromaDB, NLP
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built interactive diary interface with React.js and FastAPI RESTful APIs for memory queries and reflections
+            \item Implemented ChromaDB semantic search for long-term memory with NLP-powered conversational AI
+        \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{0.15cm}
+    \begin{twocolentry}{October 2024}
+        \textbf{Distributed CRM Platform - Top 5, OHack 2024}, React.js, Node.js, MongoDB, AWS, Docker
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Architected scalable CRM with microservices and Docker processing 25K+ records with 99.97\% uptime
+            \item Deployed multi-tier application on AWS reducing deployment time by 75\% and costs by 40\%
+        \end{highlights}
+    \end{onecolentry}
+
+    
+    \vspace{0.15cm}
+
+    \begin{twocolentry}{September 2024}
+        \textbf{Faith - 1st Place, Hack SoDA 2024}, React.js, FastAPI, Full Stack
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built domain safety verification system with React.js frontend and FastAPI backend
+        \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{0.15cm}
+    
+    \begin{twocolentry}{September 2024}
+        \textbf{Melodia AI Music Engine - 2nd Place, SunHack 2024}, Python, React.js, Three.js, FFT
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built real-time audio visualization with Three.js processing 44.1kHz streams at 60fps
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Personal projects}
+
+    \begin{twocolentry}{June 2025}
+        \textbf{Intelligent Academic Registration System}, Python, AWS Lambda, PostgreSQL, Docker
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed automated course monitoring across 200+ courses with 24/7 operation and email notifications
+        \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{0.05cm}
+    
+    \begin{twocolentry}{April 2025}
+        \textbf{EnKoat Enterprise Management Platform}, React.js, Node.js, TypeScript, MongoDB
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Built enterprise management portal with React.js and Node.js/Express RESTful API
+        \end{highlights}
+    \end{onecolentry}
+
+    % Professional Experience
+    \section{Work Experience}
+
+    \vspace{0.15cm}
+    
+    \begin{twocolentry}{Aug 2024 -- Current}
+        \textbf{Epics High Mentor}, ASU
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Mentored 100+ high school students on community-based engineering projects
+        \end{highlights}
+    \end{onecolentry}
+    
+    \vspace{0.15cm}
+    
+    \begin{twocolentry}{Aug 2024 -- Dec 2024}
+        \textbf{Section Leader}, ASU
+    \end{twocolentry}
+    
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Led discussions for 200+ engineering freshmen and delivered workshops
+        \end{highlights}
+    \end{onecolentry}
+
+    % Leadership & Recognition
+    \section{Leadership \& Recognition}
+    
+    \vspace{0.05cm}
+    
+    \begin{twocolentry}{Oct 2023, Nov 2024}
+        \textbf{2x Keynote Speaker}, Ignite ASU Technology Conference (500+ attendees)
+    \end{twocolentry}
+    
+    \begin{twocolentry}{Dec 2023, April, Oct 2024}
+        \textbf{3x Technical Excellence Award}, International Student and Scholars Center
+    \end{twocolentry}
 
 \end{document}
