@@ -19,6 +19,8 @@
 
 **ResumeLoop** is an automated resume generation system that uses local AI to create tailored resumes for job applications. It reads job descriptions, extracts key information, generates customized resumes using your master resume, converts them to LaTeX, compiles PDFs, and tracks everything in an Excel spreadsheet.
 
+*Note:* Keep Ollama running locally before starting a resume run.
+
 ### Key Features
 - **Local AI processing** - No cloud dependency, uses Ollama with llama3.2:3b
 - **Stage-aware tailoring** - Automatically detects FAANG/Mid-size/Startup stages
